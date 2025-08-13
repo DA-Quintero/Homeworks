@@ -1,2 +1,2 @@
 # Homeworks
-Tareas de Estructura de Datos y Algoritmos 2
+Trabajos y Tareas de Estructura de Datos y Algoritmos 2
