@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './App.css';
 
 function App() {
   const [stack, setStack] = useState([
@@ -13,12 +14,6 @@ function App() {
       isbn: "978-0-06-088328-7",
       author: "Gabriel García Márquez",
       editorial: "Sudamericana"
-    },
-    {
-      name: "1984",
-      isbn: "978-0-452-28423-4",
-      author: "George Orwell",
-      editorial: "Secker & Warburg"
     }
   ]);
   
@@ -70,69 +65,65 @@ function App() {
   };
 
   return (
-    <div style={{ padding: 20, fontFamily: "sans-serif" }}>
-      <h1>Pila de Libros</h1>
+    <div className="app-container">
+      <h1 className="app-title">Pila de Libros</h1>
 
-      <div style={{ marginBottom: 20, padding: 15, border: "1px solid #ccc", borderRadius: 5 }}>
-        <h3>Agregar Nuevo Libro</h3>
-        <div style={{ display: "grid", gap: 10, maxWidth: 400 }}>
+      <div className="book-form-container">
+        <h3 className="book-form-title">Agregar Nuevo Libro</h3>
+        <div className="book-form-grid">
           <input
             type="text"
             placeholder="Nombre del libro"
             value={bookForm.name}
             onChange={(e) => handleInputChange('name', e.target.value)}
+            className="book-input"
           />
           <input
             type="text"
             placeholder="ISBN"
             value={bookForm.isbn}
             onChange={(e) => handleInputChange('isbn', e.target.value)}
+            className="book-input"
           />
           <input
             type="text"
             placeholder="Autor"
             value={bookForm.author}
             onChange={(e) => handleInputChange('author', e.target.value)}
+            className="book-input"
           />
           <input
             type="text"
             placeholder="Editorial"
             value={bookForm.editorial}
             onChange={(e) => handleInputChange('editorial', e.target.value)}
+            className="book-input"
           />
-          <button onClick={handleAddBook}>Agregar Libro</button>
+          <button onClick={handleAddBook} className="add-book-btn">
+            Agregar Libro
+          </button>
         </div>
       </div>
 
-      <div style={{ marginBottom: 20 }}>
-        <button onClick={pop} style={{ marginRight: 10 }}>Pop</button>
-        <button onClick={peek}>Peek</button>
+      <div className="stack-controls">
+        <button onClick={pop} className="stack-btn">Pop</button>
+        <button onClick={peek} className="stack-btn">Peek</button>
       </div>
 
-      <p>Tamaño de la pila: {size()}</p>
-      <p>{isEmpty() ? "La pila está vacía" : "La pila tiene elementos"}</p>
+      <p className="stack-info">Tamaño de la pila: {size()}</p>
+      <p className="stack-info">
+        {isEmpty() ? "La pila está vacía" : "La pila tiene elementos"}
+      </p>
 
-      <h3>Pila de Libros (TOP → BOTTOM)</h3>
-      <div style={{ maxWidth: 600 }}>
+      <h3 className="stack-title">Pila de Libros (TOP → BOTTOM)</h3>
+      <div className="books-container">
         {[...stack].reverse().map((book, i) => (
-          <div key={i} style={{ 
-            border: "1px solid #ddd", 
-            margin: "10px 0", 
-            padding: 15, 
-            borderRadius: 5,
-            backgroundColor: i === 0 ? "#f0f8ff" : "#fff"
-          }}>
-            <h4 style={{ margin: "0 0 10px 0", color: "#333" }}>{book.name}</h4>
-            <p style={{ margin: "5px 0", fontSize: "14px" }}><strong>ISBN:</strong> {book.isbn}</p>
-            <p style={{ margin: "5px 0", fontSize: "14px" }}><strong>Autor:</strong> {book.author}</p>
-            <p style={{ margin: "5px 0", fontSize: "14px" }}><strong>Editorial:</strong> {book.editorial}</p>
-            {i === 0 && <span style={{ 
-              backgroundColor: "#007bff", 
-              color: "white", 
-              padding: "2px 8px", 
-              borderRadius: 3, 
-              fontSize: "12px" 
-            }}>TOP</span>}
+          <div key={i} className={`book-card ${i === 0 ? 'top-book' : ''}`}>
+            <h4 className="book-title">{book.name}</h4>
+            <p className="book-detail"><strong>ISBN:</strong> {book.isbn}</p>
+            <p className="book-detail"><strong>Autor:</strong> {book.author}</p>
+            <p className="book-detail"><strong>Editorial:</strong> {book.editorial}</p>
+            {i === 0 && <span className="top-badge">TOP</span>}
           </div>
         ))}
       </div>

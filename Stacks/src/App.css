@@ -1,42 +1,144 @@
-#root {
-  max-width: 1280px;
+.app-container {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+.app-title {
+  color: #333;
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.book-form-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.book-form-title {
+  margin-top: 0;
+  color: #555;
+  font-size: 18px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.book-form-grid {
+  display: grid;
+  gap: 10px;
+  max-width: 400px;
 }
 
-.card {
-  padding: 2em;
+.book-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.book-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.add-book-btn {
+  padding: 10px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.add-book-btn:hover {
+  background-color: #218838;
+}
+
+.stack-controls {
+  margin-bottom: 20px;
+}
+
+.stack-btn {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.stack-btn:hover {
+  background-color: #0056b3;
+}
+
+.stack-info {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.stack-title {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.books-container {
+  max-width: 600px;
+}
+
+.book-card {
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.book-card.top-book {
+  background-color: #f0f8ff;
+  border-color: #007bff;
+}
+
+.book-title {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.book-detail {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.book-detail strong {
+  color: #333;
+}
+
+.top-badge {
+  background-color: #007bff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 8px;
 }
