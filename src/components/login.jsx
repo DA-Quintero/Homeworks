@@ -43,7 +43,7 @@ export const Login = () => {
       {status === "authenticated" ? (
         <>
           <h1>Bienvenido, {displayName}!</h1>
-          <button onClick={() => navigate('/crud')}>Ir al CRUD</button>
+          <button onClick={() => navigate('/chat')}>Ir al Chat</button>
           <button onClick={onLogout}>Cerrar sesión</button>
         </>
       ) : (

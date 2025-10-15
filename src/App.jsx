@@ -1,7 +1,7 @@
 import './App.css'
 import { Registro } from './components/register'
 import { Login } from './components/login'
-import { Crud } from './components/fbCrud'
+import { Chat } from './components/chat'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/register" element={<Registro />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/crud" element={<Crud />} />
+        <Route path="/chat" element={<Chat />} />
         <Route path="/" element={<Navigate to="/register" replace />} />
       </Routes>
     </div>

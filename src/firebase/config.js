@@ -2,13 +2,14 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-import { getFirestore} from "firebase/firestore";
+import { getDatabase } from "firebase/database";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBge59jNt92-UubMKBzJuLxUhgzOHwvOyU",
   authDomain: "fir-proyect-972b9.firebaseapp.com",
+  databaseURL: "https://fir-proyect-972b9-default-rtdb.firebaseio.com/",
   projectId: "fir-proyect-972b9",
   storageBucket: "fir-proyect-972b9.firebasestorage.app",
   messagingSenderId: "987944057539",
@@ -20,6 +21,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
-const db = getFirestore(app);
+const db = getDatabase(app);
 
 export { app, auth, analytics, db };
