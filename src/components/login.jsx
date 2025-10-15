@@ -3,10 +3,11 @@ import { useState } from "react";
 import { loginWithEmailAndPassword } from "../store/thunks/loginThunk";
 import { loginWithGoogle } from "../store/thunks/loginGoogleThunk";
 import { logoutAuth } from "../store/thunks/logoutThunk";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { status, displayName } = useSelector((state) => state.auth);
 
   const [formState, setFormState] = useState({
@@ -42,6 +43,7 @@ export const Login = () => {
       {status === "authenticated" ? (
         <>
           <h1>Bienvenido, {displayName}!</h1>
+          <button onClick={() => navigate('/crud')}>Ir al CRUD</button>
           <button onClick={onLogout}>Cerrar sesión</button>
         </>
       ) : (
